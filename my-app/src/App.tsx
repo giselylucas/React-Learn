@@ -29,7 +29,7 @@ const App = () => {
         </a>
         <button onClick={handleClick}>Button 1</button>
       </header>
-      <DogDetails onBark={onBark} />
+      <DogDetails handleClick={onBark} />
     </div>
   );
 }

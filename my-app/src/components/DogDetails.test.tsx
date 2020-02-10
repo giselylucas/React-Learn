@@ -3,6 +3,7 @@ import { render, getByText, fireEvent } from '@testing-library/react';
 import DogDetails from './DogDetails';
 
 describe('DogDetails', () => {
+    /* Exercício 2 */
     it('should to load paragraph', () => {
         const { getByText } = render(<DogDetails />);
         const paragraphElement = getByText("Dog's name");
@@ -29,15 +30,16 @@ describe('DogDetails', () => {
         expect(button).toBeInTheDocument();
     });
 
+    /* Exercício 3 */
     //Existe uma outra forma de validar se o valor está correto?
-    it('should render alert when button was clicked', () => {
-        const { getByText } = render(<DogDetails />);
+    it('should called the function when button was clicked', () => {
+        const onBark = jest.fn();
+        const { getByText } = render(<DogDetails handleClick={onBark}/>);
         const button = getByText('Bark!');
-        window.alert = jest.fn();
 
         fireEvent.click(button);
 
         // expect(button).toHaveAttribute('onClick');
-        expect(window.alert).toHaveBeenCalled();
+        expect(onBark).toHaveBeenCalled();
     })
 })
