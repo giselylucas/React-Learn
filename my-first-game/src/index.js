@@ -24,16 +24,24 @@ class Board extends React.Component {
     return (
       <div>
         <div className="board-row">
+          <p class="letter-square first-letter-square">A</p>
+          <p class="letter-square">B</p>
+          <p class="letter-square">C</p>
+        </div>
+        <div className="board-row">
+          <p class="letter-square">1</p>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
         <div className="board-row">
+          <p class="letter-square">2</p>
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
         </div>
         <div className="board-row">
+          <p class="letter-square">3</p>
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
