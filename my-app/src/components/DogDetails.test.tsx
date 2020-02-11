@@ -41,5 +41,24 @@ describe('DogDetails', () => {
 
         // expect(button).toHaveAttribute('onClick');
         expect(onBark).toHaveBeenCalled();
-    })
+    });
+
+    /* Exercício 4 */
+    it('Count state is loaded with initial value of 0', () => {
+        const { getByText } = render(<DogDetails />);
+        expect(getByText('Counter: 0')).toBeTruthy();
+    });
+
+    it('should counter when the button was clicked', () => {
+        const counter = jest.fn();
+        const { getByText } = render(<DogDetails />);
+        const button = getByText('Scold!');
+
+        fireEvent.click(button);
+        expect(getByText('Counter: 1')).toBeTruthy();
+        fireEvent.click(button);
+        expect(getByText('Counter: 2')).toBeTruthy();
+        fireEvent.click(button);
+        expect(getByText('Counter: 3')).toBeTruthy();
+    });
 })
