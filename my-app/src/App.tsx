@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import DogDetails from './components/DogDetails';
+import DogDetails from './components/DogDetails/DogDetails';
+import CreateBeerForm from './components/CreateBeerForm/CreateBeerForm';
 
 const App = () => {
   const handleClick = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <button onClick={handleClick}>Button 1</button>
       </header>
       <DogDetails handleClick={onBark} />
+      <CreateBeerForm />
     </div>
   );
 }
