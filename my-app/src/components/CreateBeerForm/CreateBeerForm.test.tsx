@@ -8,11 +8,11 @@ describe('CreateBeerForm', () => {
 
     const setup = () => {
         const utils = render(<CreateBeerForm />);
-        const inputBeerName = utils.getByLabelText(/beer-name/i);
-        const inputBeerType = utils.getByLabelText(/beer-option/i);
-        const inputHasCorn = utils.getByLabelText(/has-corn/i);
-        const inputIngredients = utils.getByLabelText(/ingredients/i);
-        const submit = utils.getByLabelText(/submit/i);
+        const inputBeerName = utils.getByLabelText(/Beer Name/i);
+        const inputBeerType = utils.getByLabelText(/Beer Option/i);
+        const inputHasCorn = utils.getByLabelText(/Has Corn/i);
+        const inputIngredients = utils.getByLabelText(/Ingredients/i);
+        const submit = utils.getByText(/Submit/i);
 
         return {
             inputBeerName,

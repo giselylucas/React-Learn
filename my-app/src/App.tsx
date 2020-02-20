@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import DogDetails from './components/DogDetails/DogDetails';
 import CreateBeerForm from './components/CreateBeerForm/CreateBeerForm';
+import CreateBeerFormikForm from './components/CreateBeerFormikForm/CreateBeerFormikForm';
 
 const App = () => {
   const handleClick = () => {
@@ -32,6 +33,7 @@ const App = () => {
       </header>
       <DogDetails handleClick={onBark} />
       <CreateBeerForm />
+      <CreateBeerFormikForm />
     </div>
   );
 }
