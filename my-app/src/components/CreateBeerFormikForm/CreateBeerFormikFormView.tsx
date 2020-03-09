@@ -1,26 +1,25 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage, FieldProps, FormikProps } from 'formik';
+import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik';
 import { Schema } from 'yup';
-import Checkbox from './CheckboxFormikField';
+import Checkbox from '../CheckboxFormikField/CheckboxFormikField';
 
 interface Props<T> {
     initialValues: T;
     onSubmit: (values: T) => void;
     validationSchema: Schema<T>;
-}
+};
 
-function CreateBeerFormikFormView (props: Props<T>) {
+function CreateBeerFormikFormView<T>(props: Props<T>) {
     return (
         <Formik
                 initialValues={props.initialValues}
                 onSubmit={props.onSubmit}
                 validationSchema={props.validationSchema}>
-                {(props: FormikProps<any>) => (
+                {(props: FormikProps<T>) => (
                     <Form onSubmit={props.handleSubmit}>
                         <label htmlFor="beerName1">Beer Name</label>
                         <Field
                             className="newBeerName"
-                            id="beerName1"
                             name="beerName"/>
                         <ErrorMessage name="beerName" >
                             {errorMessage => <p>{errorMessage}</p>}
