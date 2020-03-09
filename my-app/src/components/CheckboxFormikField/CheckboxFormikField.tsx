@@ -12,14 +12,17 @@ function CheckboxFormikField(props: Props) {
         <Field
             name={props.name}
             className={props.className}>
-        {({field, form}: FieldProps) => (
-            <label>
-            <input
-                type="checkbox"
-                {...field}
-            />
-            {props.label}
-            </label>
+        {({field}: FieldProps) => (
+            <div>
+                <label htmlFor="hasCorn1">
+                    {props.label}
+                </label>
+                <input
+                    id="hasCorn1"
+                    type="checkbox"
+                    {...field}
+                />
+            </div>
         )}
         </Field>
     );
