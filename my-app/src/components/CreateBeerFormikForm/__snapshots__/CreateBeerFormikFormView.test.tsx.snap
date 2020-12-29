@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateBeerFormikFormView Render correctly order of elements  1`] = `
+Array [
+  <option
+    hidden={true}
+    value="ale"
+  >
+    ale
+  </option>,
+  <option
+    hidden={true}
+    value="lager"
+  >
+    lager
+  </option>,
+  <option
+    hidden={true}
+    value="stout"
+  >
+    stout
+  </option>,
+]
+`;

@@ -49,6 +49,7 @@ describe('CheckboxFormikField', () => {
         const fieldWrapper = wrapper.find(Field).renderProp('children')(fieldProps);
         const inputWrapper = fieldWrapper.children().find('input');
         const labelWrapper = fieldWrapper.children().find('label');
+        
         expect(fieldWrapper.childAt(0)).toEqual(labelWrapper);
         expect(fieldWrapper.childAt(1)).toEqual(inputWrapper);
 

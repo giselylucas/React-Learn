@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik';
 import { Schema } from 'yup';
 import Checkbox from '../CheckboxFormikField/CheckboxFormikField';
+import CheckboxFormikField from '../CheckboxFormikField/CheckboxFormikField';
 
 interface Props<T> {
     initialValues: T;
@@ -19,7 +20,7 @@ function CreateBeerFormikFormView<T>(props: Props<T>) {
                     <Form onSubmit={props.handleSubmit}>
                         <label htmlFor="beerName1">Beer Name</label>
                         <Field
-                            className="newBeerName"
+                            className="newBeerName1"
                             name="beerName"/>
                         <ErrorMessage name="beerName" >
                             {errorMessage => <p>{errorMessage}</p>}
@@ -43,7 +44,7 @@ function CreateBeerFormikFormView<T>(props: Props<T>) {
                         <ErrorMessage name="beerType" >
                             {errorMessage => <p>{errorMessage}</p>}
                         </ErrorMessage>
-                        <Checkbox
+                        <CheckboxFormikField
                             className="newHasCorn"
                             name="hasCorn"
                             label="Has Corn"/>

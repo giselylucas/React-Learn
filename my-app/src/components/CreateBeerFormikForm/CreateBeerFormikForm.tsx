@@ -1,9 +1,18 @@
 import React from 'react';
-import { Formik, Form, Field, FormikProps, FieldProps, FormikValues, ErrorMessage } from 'formik';
+import { FormikValues } from 'formik';
 import * as Yup from 'yup';
-import Checkbox from './CheckboxFormikField';
 import CreateBeerFormikFormView from './CreateBeerFormikFormView';
 
+
+const validationSchema = Yup.object().shape({
+    beerName: Yup.string()
+    .required('Required'),
+    beerType: Yup.string()
+    .required('Required'),
+    hasCorn: Yup.boolean(),
+    ingredients: Yup.string()
+    .required('Required')
+});
 
 function CreateBeerFormikForm () {
     const handleSubmit = (values: FormikValues) => {
@@ -16,24 +25,13 @@ function CreateBeerFormikForm () {
         ingredients: ''
     };
 
-    const validationSchema = Yup.object().shape({
-        beerName: Yup.string()
-            .required('Required'),
-        beerType: Yup.string()
-            .required('Required'),
-        ingredients: Yup.string()
-            .required('Required')
-    });
-
     return (
-            <CreateBeerFormikFormView 
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-                initialValues={initialValues}
-            />
+        <CreateBeerFormikFormView 
+            onSubmit={handleSubmit}
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+        />
     );
 }
-
-
 
 export default CreateBeerFormikForm;
